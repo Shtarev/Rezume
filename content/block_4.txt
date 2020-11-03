@@ -1,0 +1,23 @@
+Skill Set
+85
+php
+80
+html
+70
+js
+60
+css
+50
+mysql
+20
+python
+80
+dreamwewer
+50
+coreldraw
+75
+laravel
+30
+symfony
+35
+angular

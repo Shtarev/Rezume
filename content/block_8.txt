@@ -1,0 +1,19 @@
+Beispiele der Arbeit für Resume
+eintritt1.jpg
+eintritt.jpg
+PHP-occurrences of a substring
+monitorL1.png
+monitorL.png
+User statistics/PHP/Laravel
+paginat1.jpg
+paginat.jpg
+Pagination für Bootstrap-v4.4.1
+fa1.jpg
+fa.jpg
+Joomla Template
+schumann1.png
+schumann.png
+Schumann Resonances/PHP
+volgamost1.jpg
+volgamost.jpg
+Modul

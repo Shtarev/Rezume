@@ -1,0 +1,2 @@
+Web Developer
+<b>Diplom:</b> Ingenieurs-Mathematikers des Moskauer Institut der Elektronik und Mathematik. Fachstudium: Angewandte Mathematik.<br><b>Bewertbung:</b> Berufliche Tätigkeit: Programmierung von backend- und frontend-applikationen.

@@ -1,0 +1,4 @@
+Admin
+www.yousite.com/admin.php
+Passwort
+123456
