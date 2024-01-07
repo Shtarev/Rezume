@@ -1,8 +1,8 @@
 <?php
 include('src/config.php'); include('src/dat.php');
-function __autoload( $className ) {  
-    include "src/classes/" . $className . ".php";
-}
+spl_autoload_register(function($className){
+    require_once(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'classes'.DIRECTORY_SEPARATOR.$className.'.php'));
+});
 $pass_view = 'view';
 $pass = new Pass($passw);
 if(isset($_POST['ausgang'])){
