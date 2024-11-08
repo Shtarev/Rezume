@@ -12,7 +12,7 @@ foreach($block_8 as $key=>$value){
 			  </form>
 			  </p></div>';
 			  
-			  if($block_8[$key][3]){
+			  if(isset($block_8[$key][3])){
 			  echo
 			  '<div class="col-sm-4 col-12 p-0" style="margin-bottom: 20px"><a href="images/'.$block_8[$key][3].'" target="_blank"><img class="img-thumbnail"  src="images/'.$block_8[$key][4].'" alt=""></a><p>'.$block_8[$key][5].'
 			  <br><form action="src/fotorobot.php" method="post">
@@ -21,7 +21,7 @@ foreach($block_8 as $key=>$value){
 			  </form>
 			  </p></div>';
 			  }
-			  if($block_8[$key][6]){
+			  if(isset($block_8[$key][6])){
 			  echo
 			  '<div class="col-sm-4 col-12 p-0" style="margin-bottom: 20px"><a href="images/'.$block_8[$key][6].'" target="_blank"><img class="img-thumbnail"  src="images/'.$block_8[$key][7].'" alt=""></a><p>'.$block_8[$key][8].'
 			  <br><form action="src/fotorobot.php" method="post">
@@ -36,7 +36,7 @@ foreach($block_8 as $key=>$value){
 ?>
 <h3>Neue Beispiele</h3>
 <form action="src/fotorobot.php" method="post" enctype="multipart/form-data">
-	<input type="text" name="beschreibung" value="" placeholder="Beschreibung"><br><br>
-	<input type="file" name="beispiel"><br><br>
+	<input id="beispiel" type="text" name="beschreibung" value="" placeholder="Beschreibung"><br><br>
+	<input id="beispielFoto" type="file" name="beispiel"><br><br>
 	<input type="submit" value="Wahlen">
 </form>
