@@ -28,8 +28,8 @@
   <br>
   <p>Neu Skill Set</p>
   <form method="post" action="">
-	  <input type="text" name="nachweis" value="" placeholder="Skill Nachweis">
-	  <input type="text" name="prozent" value="" placeholder="Skill Prozent">
+	  <input id="skillName" type="text" name="nachweis" value="" placeholder="Skill Nachweis">
+	  <input id="skillProzent" type="text" name="prozent" value="" placeholder="Skill Prozent">
 	  <input type="button" value="Wahlen" onClick="skilTest(this)">
   </form>
   <form id="skillDel" method="post" action="">

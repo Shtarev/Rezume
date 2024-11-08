@@ -12,7 +12,7 @@ class Pass {
         return $_SERVER['DOCUMENT_ROOT'];
     }
     public function pruf($url) {
-        $out = file_get_contents($this->url().'/'.$url.'/pass_form.php');
+        $out = file_get_contents($this->url() . DIRECTORY_SEPARATOR . $url . DIRECTORY_SEPARATOR . 'pass_form.php');
         if(!isset($_POST['pass'])){
             if(!isset($_SESSION['pass'])){
                 $text = $this->text1;

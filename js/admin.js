@@ -7,9 +7,15 @@ function progressLoschen(elem) {
 	}
 }
 
-function skilTest(elem) {
-	var isZahl = elem.form[1].value * 1;
-	if(!isZahl) {
+async function skilTest(elem) {
+  let uri = location.protocol+'//'+window.location.hostname;
+  let resp = await fetch(uri + '/src/skillCheck.php?skillCheck=' + elem.form[0].value).then((response) => response.json());
+	let isZahl = elem.form[1].value * 1;
+	
+  if(resp != 'ok') {
+    alert('Skill "' + resp + '" bereits existiert');
+  }
+  else if(!isZahl) {
 		alert('Feld Skill Prozent soll ein Nummer mehr als 0 sein');
 		elem.form[1].style = 'background-color: coral';
 		setTimeout(function(){elem.form[1].style.backgroundColor='white'; elem.form[1].style.transition='2s';}, 3000);
@@ -74,11 +80,8 @@ document.addEventListener('input', function(event) {
             document.getElementById('ich').src='images/ich.'+extension;
         }, 3000);
     }
-    else if(id == 'file') {
-        xxxx(id, 'robotFile');
-    }
-    else {
-        datenIn(id, value, 'robotContentTitle');
+    else if(id != 'skillName' && id != 'skillProzent' && id != 'beispiel' && id != 'beispielFoto' && id != 'emailW' && id != 'passW') {
+      datenIn(id, value, 'robotContentTitle');
     }
 });
 function datenIn(id, value, robot) {

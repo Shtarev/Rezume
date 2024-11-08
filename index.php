@@ -1,5 +1,13 @@
+<?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+?>
 <!DOCTYPE html>
-<?php include('src/config.php'); include('src/dat.php'); ?>
+<?php
+include('src' . DIRECTORY_SEPARATOR . 'config.php');
+include('src' . DIRECTORY_SEPARATOR . 'dat.php');
+?>
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -11,17 +19,17 @@
   <body>
     <div class="container">
       <hr>
-<?php include('view/header.php'); ?>
+<?php include('view' . DIRECTORY_SEPARATOR . 'header.php'); ?>
       <hr>
       <div class="row">
-<?php include('view/block_1.php'); ?>
-<?php include('view/block_2.php'); ?>
+<?php include('view' . DIRECTORY_SEPARATOR . 'block_1.php'); ?>
+<?php include('view' . DIRECTORY_SEPARATOR . 'block_2.php'); ?>
       </div>
       <hr>
-<?php if($Skill) { include('view/skill.php'); } ?>
-<?php if($block5) { include('view/block_5.php'); } ?>
-<?php if($erfahrungen) { include('view/erfahrung.php'); } ?>
-<?php if($beispiele) { include('view/block_8.php'); } ?>
+<?php if($Skill) { include('view' . DIRECTORY_SEPARATOR . 'skill.php'); } ?>
+<?php if($block5) { include('view' . DIRECTORY_SEPARATOR . 'block_5.php'); } ?>
+<?php if($erfahrungen) { include('view' . DIRECTORY_SEPARATOR . 'erfahrung.php'); } ?>
+<?php if($beispiele) { include('view' . DIRECTORY_SEPARATOR . 'block_8.php'); } ?>
 	  <div id="kontakt"></div>
       <hr>
       <h2>Contact</h2>
@@ -65,7 +73,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <p>Copyright © 2010<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script> | Freiheitsgewährende Software | Design & programmierung by <a href="https://www.netzexplorer.com">Andrey Shtarev</a></p>
+            <p>Copyright © 2010<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script> | <a href="https://github.com/Shtarev/Rezume">Freiheitsgewährende Software</a> | Design & programmierung by <a href="https://www.netzexplorer.com">Andrey Shtarev</a></p>
             </div>
           </div>
         </div>
