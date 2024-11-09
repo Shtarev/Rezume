@@ -38,31 +38,24 @@ include('src' . DIRECTORY_SEPARATOR . 'dat.php');
         <div class="row justify-content-center">
           <div class="col-lg-8  col-12 jumbotron">
             <form id="f_m">
-			<?php
-				if(isset($_POST['name'])) {
-					if(mail("$email","Resume Nachricht","Absender Name: ".$_POST['name']."\nE-Mail des Absender: ".$_POST['email']."\nNachricht:\n".$_POST['message'],"Content-type:text/plain; Charset=UTF-8\r\n")) {
-						echo"<div class=\"alert alert-success\">Nachricht ist gesendet</div>";
-					}
-				}
-			?>
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                <input type="text" class="form-control" id="absenderName" name="absenderName" placeholder="Name">
               </div>
               <div class="form-group">
                 <label for="email">E-Mail</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="absenderEmail" name="absenderEmail" placeholder="Email Address" aria-describedby="emailHelp">
                 <span id="emailHelp" class="form-text text-muted" style="display: none;">Please enter a valid e-mail address.</span>
               </div>
               <div class="form-group">
                 <label for="message">Message</label>
-                <textarea rows="10" cols="100" class="form-control" id="message" name="message" placeholder="Message" aria-describedby="messageHelp"></textarea>
+                <textarea rows="10" cols="100" class="form-control" id="absenderMessage" name="absenderMessage" placeholder="Message" aria-describedby="messageHelp"></textarea>
                 <span id="messageHelp" class="form-text text-muted" style="display: none;">Please enter a message.</span>
               </div>
               <div class="text-center">
                 <p>Um die Mitteilung abzusenden antworten Sie auf die Frage:</p>
                 <p>zwei plus zwei wird<br><input class="text-center" style="width:220px;" type="text" id="otvet" value="" placeholder="Zahl als Zahlen angeben"></p>
-                <button type="button" class="btn btn-primary" onclick="foo()">Senden</button>
+                <button type="button" class="btn btn-primary" onclick="emailFoo()">Senden</button>
               </div>
             </form>
           </div>
@@ -85,13 +78,33 @@ include('src' . DIRECTORY_SEPARATOR . 'dat.php');
     <script src="js/bootstrap-4.0.0.js"></script>
     <script src="js/nachtrag.js"></script>
     <script>
-    function foo(){
-        if(otvet.value == 4){
-            f_m.method = 'post';
-            f_m.action = '/#kontakt';
-            f_m.submit();
+    async function emailFoo(){
+        if(otvet.value == 4) {
+          let data = {
+            absenderName: absenderName.value,
+            absenderEmail: absenderEmail.value,
+            absenderMessage: absenderMessage.value
+          }
+          let uri = location.protocol+'//'+window.location.hostname;
+          var resp = await fetch(uri + '/emailFoo.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            return response.text();
+          })
+
         }
         else{ alert('Antwort ist nicht richtig. Vorsagen: 4') }
+        if(resp) {
+          absenderName.value = '';
+          absenderEmail.value = '';
+          absenderMessage.value = '';
+          alert('Die Nachricht wurde erfolgreich gesendet!')
+        }
     }
     </script>
   </body>
