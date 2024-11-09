@@ -76,7 +76,6 @@ include('src' . DIRECTORY_SEPARATOR . 'dat.php');
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.0.0.js"></script>
-    <script src="js/nachtrag.js"></script>
     <script>
     async function emailFoo(){
         if(otvet.value == 4) {
@@ -107,5 +106,6 @@ include('src' . DIRECTORY_SEPARATOR . 'dat.php');
         }
     }
     </script>
+    <script src="js/nachtrag.js?" + Date.now()></script>
   </body>
 </html>
