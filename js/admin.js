@@ -64,7 +64,13 @@ document.addEventListener("click", function(event) {
 });
 document.addEventListener('input', function(event) {
     var id = event.target.id;
-    var value = event.target.value;
+    let value = undefined;
+    
+    if(event.target.nodeName == 'INPUT' && event.target.type == 'text') {
+      event.target.value = event.target.value.replace(/</g, '').replace(/>/g, '');
+      value = event.target.value;
+    }
+
     if(id == 'resume') {
         datenFileIn(id, 'robotResume');
     }
@@ -179,3 +185,7 @@ function editor(elem) {
                                                 </div>');
     }
 }
+
+let nachtragAdd = document.createElement('script');
+nachtragAdd.src ='js/nachtrag.js?' + Date.now();
+document.body.append(nachtragAdd);
