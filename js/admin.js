@@ -80,7 +80,7 @@ document.addEventListener('input', function(event) {
             document.getElementById('ich').src='images/ich.'+extension;
         }, 3000);
     }
-    else if(id != 'skillName' && id != 'skillProzent' && id != 'beispiel' && id != 'beispielFoto' && id != 'emailW' && id != 'passW') {
+    else if(id != '' && id != 'skillName' && id != 'skillProzent' && id != 'beispiel' && id != 'beispielFoto' && id != 'emailW' && id != 'passW') {
       datenIn(id, value, 'robotContentTitle');
     }
 });
