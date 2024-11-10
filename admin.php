@@ -104,6 +104,5 @@ else {
     <script src="js/bootstrap-4.0.0.js"></script>
     <script src="js/admin.js"></script>
     <script src="contentedit/js/script.js"></script>
-    <script src="js/nachtrag.js?" + Date.now()></script>
   </body>
 </html>

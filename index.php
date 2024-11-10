@@ -99,13 +99,13 @@ include('src' . DIRECTORY_SEPARATOR . 'dat.php');
         }
         else{ alert('Antwort ist nicht richtig. Vorsagen: 4') }
         if(resp) {
-          absenderName.value = '';
-          absenderEmail.value = '';
-          absenderMessage.value = '';
+          f_m.reset();
           alert('Die Nachricht wurde erfolgreich gesendet!')
         }
     }
+    let nachtragAdd = document.createElement('script');
+    nachtragAdd.src ='js/nachtrag.js?' + Date.now();
+    document.body.append(nachtragAdd);
     </script>
-    <script src="js/nachtrag.js?" + Date.now()></script>
   </body>
 </html>
